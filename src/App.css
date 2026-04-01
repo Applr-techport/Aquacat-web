@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #289BDD;
+  --color-light: #41BDED;
+
+  --color-bg: #F0FAFF;
+  --color-surface: #FFFFFF;
+  --color-success: #34D399;
+  --color-danger: #F87171;
+  --color-gold: #F59E0B;
+  --color-text: #1a2b3c;
+  --color-text-secondary: #5a6b7c;
+  --color-border: rgba(40, 155, 221, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(40, 155, 221, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: white;
+}
+
+.btn-dark:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background: white;
+  color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-white:hover {
+  box-shadow: 0 8px 24px rgba(40, 155, 221, 0.2);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
