@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
       </div>
       <div className={styles.imageWrap}>
-        <img src="/assets/cat1.svg" alt="아쿠아캣 캐릭터" className={styles.image} />
+        <img src="/assets/cat1.svg" alt="냥냥워터 캐릭터" className={styles.image} />
       </div>
     </section>
   )
