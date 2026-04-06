@@ -24,9 +24,6 @@ export default function LegalPage({ type }) {
             </section>
           ))}
         </main>
-        <footer className={styles.footer}>
-          <a href="/" className={styles.backLink}>← 홈으로 돌아가기</a>
-        </footer>
       </div>
     </div>
   )
