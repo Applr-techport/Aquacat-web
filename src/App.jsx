@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
@@ -14,6 +14,22 @@ import Legal from './components/Legal'
 export default function App() {
   const [legalPage, setLegalPage] = useState(null)
 
+  useEffect(() => {
+    const path = window.location.pathname
+    if (path === '/privacy') setLegalPage('privacy')
+    else if (path === '/terms') setLegalPage('terms')
+  }, [])
+
+  const handleLegal = (type) => {
+    setLegalPage(type)
+    window.history.pushState({}, '', `/${type}`)
+  }
+
+  const handleCloseLegal = () => {
+    setLegalPage(null)
+    window.history.pushState({}, '', '/')
+  }
+
   return (
     <>
       <Header />
@@ -27,9 +43,9 @@ export default function App() {
         <FAQ />
         <Download />
       </main>
-      <Footer onLegal={setLegalPage} />
+      <Footer onLegal={handleLegal} />
       {legalPage && (
-        <Legal type={legalPage} onClose={() => setLegalPage(null)} />
+        <Legal type={legalPage} onClose={handleCloseLegal} />
       )}
     </>
   )
